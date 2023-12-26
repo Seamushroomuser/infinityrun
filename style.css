@@ -1,0 +1,72 @@
+.game {
+    height: 575px;
+    border: 1px solid black;
+    margin: auto;
+  }
+  #tiger {
+    width: 75px;
+    height: 75px;
+    background-image: url("tiger.gif");
+    background-size: 75px 75px;
+    position: relative;
+    top: 500px;
+    animation: jump 0.3s linear;
+  }
+  #human {
+    width: 75px;
+    height: 75px;
+    background-image: url("human.gif");
+    background-size: 75px 75px;
+    position: relative;
+    top: 425px;
+    left: 90px;
+  }
+  
+  .jump {
+    animation: jump 0.3s linear;
+  }
+  
+  @keyframes jump {
+    0% {
+      top: 375px;
+    }
+  
+    30% {
+      top: 355px;
+    }
+  
+    50% {
+      top: 305px;
+    }
+  
+    80% {
+      top: 355px;
+    }
+  
+    100% {
+      top: 425px;
+    }
+  }
+  
+  #landmine {
+    width: 20px;
+    height: 40px;
+    position: relative;
+    top: 375px;
+    left: 580px;
+  
+    background-image: url("landmine.jpg  ");
+    background-size: 20px 40px;
+  
+    animation: block 1s infinite linear;
+  }
+  
+  @keyframes block {
+    0% {
+      left: 580px;
+    }
+  
+    100% {
+      left: -5px;
+    }
+  }
