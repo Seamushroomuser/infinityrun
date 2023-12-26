@@ -1,9 +1,10 @@
-    var music = new Audio('music.mp3');
+   score = document.getElementById("score").innerHTML;
+   score = 0;
+   var music = new Audio('music.mp3');
 music.play();
 const human = document.getElementById("human");
 const landmine = document.getElementById("landmine");
 const tiger = document.getElementById("tiger");
-
 function jump() {
   if (human.classList != "jump") {
     human.classList.add("jump");
@@ -31,13 +32,22 @@ let isAlive = setInterval(function () {
   );
 
   // detect collision
-  if (landmineLeft < 140 && landmineLeft > 90 && humanTop >= 400) {
+  if (landmineLeft < 140 && landmineLeft > 90 && humanTop >= 200) {
     // collision
     var explode = new Audio('explode.mp3');
     explode.play();
     alert("Game Over!");
+    score = 0;
+    score = document.getElementsById("score").innerHTML = 0;
+  }
+  else{
+     score = score + 1;
+     score = document.getElementById("score").innerHTML = score;
   }
 }, 10);
+if(score == 999999999){
+  alert("Great job champ ! you made it ")
+}
 
 document.addEventListener("keydown", function (event) {
   jump();
